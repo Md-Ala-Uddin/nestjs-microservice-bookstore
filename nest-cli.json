@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/nestjs_micros_bookstore/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs_micros_bookstore/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nestjs_micros_bookstore",
+  "projects": {
+    "bookstore-api-gateway": {
+      "type": "application",
+      "root": "apps/bookstore-api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/bookstore-api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/bookstore-api-gateway/tsconfig.app.json"
+      }
+    },
+    "nestjs_micros_bookstore": {
+      "type": "application",
+      "root": "apps/nestjs_micros_bookstore",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs_micros_bookstore/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nestjs_micros_bookstore/tsconfig.app.json"
+      }
+    }
   }
 }
