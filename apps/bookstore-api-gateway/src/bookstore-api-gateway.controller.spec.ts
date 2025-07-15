@@ -11,7 +11,9 @@ describe('BookstoreApiGatewayController', () => {
       providers: [BookstoreApiGatewayService],
     }).compile();
 
-    bookstoreApiGatewayController = app.get<BookstoreApiGatewayController>(BookstoreApiGatewayController);
+    bookstoreApiGatewayController = app.get<BookstoreApiGatewayController>(
+      BookstoreApiGatewayController,
+    );
   });
 
   describe('root', () => {
